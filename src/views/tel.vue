@@ -1,0 +1,9 @@
+<template>
+  <div>1666666666</div>
+</template>
+
+<script>
+export default {
+  
+}
+</script>
