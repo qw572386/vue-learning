@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <b>{{ food }}</b>
     <img alt="Vue logo" src="../assets/logo.png">
     <button @click="handleClick('back')">返回上一页</button>
     <button @click="handleClick('push')">跳转到parent</button>
@@ -15,6 +16,24 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  props: {
+    food: {
+      type: String,
+      default: 'apple'
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    // next()
+    next(vm => {
+      console.log(vm)
+    })
+  },
+  beforeRouteLeave(to, from, next) {
+    //has access to `this` component instance
+    const leave = confirm('您确定要离开吗？')
+    if (leave) next()
+    else next(false)
   },
   methods: {
     handleClick (type) {
