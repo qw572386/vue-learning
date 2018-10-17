@@ -1,7 +1,8 @@
 <template>
   <div>
-    <a-input @input="handleInput" />
-    <p>{{ inputValue }} last letter is : {{ inputValueLastLetter }}</p>
+    <!-- <a-input :value="stateValue" @input="handlStateValueChange" /> -->
+    <a-input v-model="stateValue" />
+    <p>{{ stateValue }} last letter is : {{ inputValueLastLetter }}</p>
     <a-show :content="inputValue" />
     <p>
       appName: {{ appName }}
@@ -38,8 +39,17 @@ export default {
      appVersion: state => state.appVersion,
     //  todoList: state => state.todo ? state.todo.todoList : []
     // user模块下todo
-     todoList: state => state.user.todo ? state.user.todo.todoList : []
+     todoList: state => state.user.todo ? state.user.todo.todoList : [],
+    //  stateValue: state => state.stateValue,
    }),
+   stateValue: {
+     get () {
+       return this.$store.state.stateValue
+     },
+     set (value) {
+        this.SET_STATE_VALUE(value)
+     }
+   },
   // ...mapState([
   //   appName
   // ])
@@ -67,7 +77,8 @@ export default {
   methods: {
     ...mapMutations ([
       'SET_APP_NAME',
-      'SET_USER_NAME'
+      'SET_USER_NAME',
+      'SET_STATE_VALUE'
     ]),
     ...mapActions ([
       'updateAppName'
@@ -108,6 +119,9 @@ export default {
           ]
         }
       })
+    },
+    handlStateValueChange (val) {
+      this.SET_STATE_VALUE(val)
     }
   }
 }

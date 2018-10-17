@@ -16,7 +16,10 @@ const mutations = {
 const actions = {
   //
   updateUserName ({ commit, state, rootState, dispatch }) {
-
+    dispatch('xxx')
+  },
+  xxx () {
+    //
   }
 }
 
