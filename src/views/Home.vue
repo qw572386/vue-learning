@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <b>{{ food }}</b>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img :src="url">
     <button @click="handleClick('back')">返回上一页</button>
     <button @click="handleClick('push')">跳转到parent</button>
     <button @click="handleClick('replace')">替换到argu</button>
-    <button @click="getInfo">请求数据</button>
+    <button @click="getInfo" :style="{ background: bgcolor }">请求数据</button>
   </div>
 </template>
 
@@ -15,6 +15,12 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import { getUserInfo } from '@/api/user'
 export default {
   name: 'home',
+  data () {
+    return {
+      url: '',
+      bgcolor: ''
+    }
+  },
   components: {
     HelloWorld
   },
@@ -58,7 +64,9 @@ export default {
     },
     getInfo () {
       getUserInfo().then(res => {
-        console.log('res: ', res)
+        console.log('res: ', res.data)
+        this.url = res.data.img
+        this.bgcolor = res.data.color
       })
     }
   }
