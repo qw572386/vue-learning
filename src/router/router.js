@@ -25,6 +25,11 @@ export default [
     component: () => import('@/views/login.vue')
   },
   {
+    path: '/split-pane',
+    name: 'split_pane',
+    component: () => import('@/views/split-pane.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -76,7 +81,6 @@ export default [
   {
     path: '/store',
     component: () => import('@/views/store.vue')
-
   },
   {
     path: '*',
