@@ -35,6 +35,11 @@ export default [
     component: () => import('@/views/render-page.vue')
   },
   {
+    path: '/menu_page',
+    name: 'menu_page',
+    component: () => import('@/views/menu-page.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
