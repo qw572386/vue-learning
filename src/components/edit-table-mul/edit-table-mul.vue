@@ -54,7 +54,7 @@ export default {
       const insideColumns = this.columns.map(item => {
         if (!item.render && item.editable) {
           item.render = (h, { row, index, column }) => {
-            const keyArr = this.insideData[index] ? this.insideData[index].edittingId : []
+            const keyArr = this.insideData[index] ? this.insideData[index].edittingKeyArr : []
             return (
               <div>
                 {keyArr && keyArr.indexOf(column.key) > -1 ? (
