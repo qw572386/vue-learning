@@ -29,15 +29,12 @@ export default {
     //     style: {
     //       color: 'prink'
     //     }
-    //   }, name) 
+    //   }, name)
     // }
     renderFunc (h, name) {
       return (
         <i on-click='{this.handleClick}' style={{color: 'prink'}}>{name}</i>
       )
-    },
-    handleClick (event) {
-      console.log(event)
     }
   }
 }

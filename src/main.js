@@ -11,19 +11,19 @@ Vue.config.productionTip = false
 Vue.prototype.$bus = Bus
 Vue.use(iview)
 
-const handlClick = event => {
-  console.log(event)
-  event.stopPropagation()
-}
-let list = [{name: 'qiwei'}, {name: 'qiw'}]
-const getLiArr = (h) => {
-  return list.map((item, index) => h('li', {
-    on: {
-      'click': handlClick
-    },
-    key: `list_item_${index}`
-  }, item.name))
-}
+// const handlClick = event => {
+//   console.log(event)
+//   event.stopPropagation()
+// }
+// let list = [{name: 'qiwei'}, {name: 'qiw'}]
+// const getLiArr = (h) => {
+//   return list.map((item, index) => h('li', {
+//     on: {
+//       'click': handlClick
+//     },
+//     key: `list_item_${index}`
+//   }, item.name))
+// }
 new Vue({
   router,
   store,

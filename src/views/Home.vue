@@ -54,20 +54,20 @@ export default {
       console.log(vm)
     })
   },
-  beforeRouteLeave(to, from, next) {
-    //has access to `this` component instance
+  beforeRouteLeave (to, from, next) {
+    // has access to `this` component instance
     const leave = confirm('您确定要离开吗？')
     if (leave) next()
     else next(false)
   },
   methods: {
     handleClick (type) {
-      if (type === "back") {
+      if (type === 'back') {
         this.$router.back()
       } else if (type === 'push') {
         this.$router.push('/parent')
-      } else if (type === 'replace'){
-        const name = 'qiwei';
+      } else if (type === 'replace') {
+        const name = 'qiwei'
         this.$router.replace({
           // name: 'argu',
           // // query: {
@@ -76,7 +76,7 @@ export default {
           // params: {
           //   name: 'qiwei'
           // }
-          path: `/argu/${ name }`
+          path: `/argu/${name}`
         })
       }
     },
@@ -106,4 +106,3 @@ export default {
   }
 }
 </style>
-

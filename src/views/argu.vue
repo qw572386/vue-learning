@@ -11,7 +11,7 @@ export default {
       default: 'qiwei'
     }
   },
-  beforeRouteUpdate(to, from, next){
+  beforeRouteUpdate (to, from, next) {
     console.log(to.name, from.name)
   }
 }

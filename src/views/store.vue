@@ -33,27 +33,27 @@ export default {
     }
   },
   computed: {
-   ...mapState({
-     appName: state => state.appName,
-     userName: state => state.user.userName,
-     appVersion: state => state.appVersion,
-    //  todoList: state => state.todo ? state.todo.todoList : []
-    // user模块下todo
-     todoList: state => state.user.todo ? state.user.todo.todoList : [],
+    ...mapState({
+      appName: state => state.appName,
+      userName: state => state.user.userName,
+      appVersion: state => state.appVersion,
+      //  todoList: state => state.todo ? state.todo.todoList : []
+      // user模块下todo
+      todoList: state => state.user.todo ? state.user.todo.todoList : [],
     //  stateValue: state => state.stateValue,
-   }),
-   stateValue: {
-     get () {
-       return this.$store.state.stateValue
-     },
-     set (value) {
+    }),
+    stateValue: {
+      get () {
+        return this.$store.state.stateValue
+      },
+      set (value) {
         this.SET_STATE_VALUE(value)
-     }
-   },
-  // ...mapState([
-  //   appName
-  // ])
-   appName () {
+      }
+    },
+    // ...mapState([
+    //   appName
+    // ])
+    appName () {
       return this.$store.state.appName
     },
     // userName () {
@@ -67,7 +67,7 @@ export default {
       'firstLetter'
     ]),
     inputValueLastLetter () {
-      return this.inputValue.substr(-1,1)
+      return this.inputValue.substr(-1, 1)
     }
   },
   components: {
@@ -75,12 +75,12 @@ export default {
     AShow
   },
   methods: {
-    ...mapMutations ([
+    ...mapMutations([
       'SET_APP_NAME',
       'SET_USER_NAME',
       'SET_STATE_VALUE'
     ]),
-    ...mapActions ([
+    ...mapActions([
       'updateAppName'
     ]),
     handleInput (val) {
@@ -115,7 +115,7 @@ export default {
         state: {
           todoList: [
             '学习mutations',
-            '学习actions',
+            '学习actions'
           ]
         }
       })
@@ -126,4 +126,3 @@ export default {
   }
 }
 </script>
-

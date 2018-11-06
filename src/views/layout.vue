@@ -19,71 +19,71 @@
 </template>
 
 <script>
-  import SideMenu from '_c/side-menu'
-  export default {
-    data() {
-      return {
-        collapsed: false,
-        menuList: [
-          {
-            title: '1111',
-            name: 'menu1',
-            icon: 'ios-alarm'
-          },
-          {
-            title: '2222',
-            name: 'menu2',
-            icon: 'ios-alarm'
-          },
-          {
-            title: '3333',
-            name: 'menu3',
-            icon: 'ios-alarm',
-            children: [
-              {
-                title: '3333-11',
-                name: 'menu3-1',
-                icon: 'ios-alarm'
-              },
-              {
-                title: '3333-22',
-                name: 'menu3-2',
-                icon: 'ios-alarm',
-                children: [
-                  {
-                    title: '3333-22-11',
-                    name: 'menu3-2-1',
-                    icon: 'ios-alarm'
-                  },
-                  {
-                    title: '3333-22-22',
-                    name: 'menu3-2-2',
-                    icon: 'ios-alarm'
-                  }
-                ]
-              }
-            ]
-          },
-        ]
-      }
-    },
-    components: {
-      SideMenu
-    },
-    computed: {
-      triggerClasses() {
-        return [
-          'trigger-icon',
-          this.collapsed ? 'rotate' : ''
-        ]
-      }
-    },
-    methods: {
-      handlCollapsed() {
-        this.collapsed = !this.collapsed
-      }
-    },
-  }
+import SideMenu from '_c/side-menu'
+export default {
+  data() {
+    return {
+      collapsed: false,
+      menuList: [
+        {
+          title: '1111',
+          name: 'menu1',
+          icon: 'ios-alarm'
+        },
+        {
+          title: '2222',
+          name: 'menu2',
+          icon: 'ios-alarm'
+        },
+        {
+          title: '3333',
+          name: 'menu3',
+          icon: 'ios-alarm',
+          children: [
+            {
+              title: '3333-11',
+              name: 'menu3-1',
+              icon: 'ios-alarm'
+            },
+            {
+              title: '3333-22',
+              name: 'menu3-2',
+              icon: 'ios-alarm',
+              children: [
+                {
+                  title: '3333-22-11',
+                  name: 'menu3-2-1',
+                  icon: 'ios-alarm'
+                },
+                {
+                  title: '3333-22-22',
+                  name: 'menu3-2-2',
+                  icon: 'ios-alarm'
+                }
+              ]
+            }
+          ]
+        },
+      ]
+    }
+  },
+  components: {
+    SideMenu
+  },
+  computed: {
+    triggerClasses() {
+      return [
+        'trigger-icon',
+        this.collapsed ? 'rotate' : ''
+      ]
+    }
+  },
+  methods: {
+    handlCollapsed() {
+      this.collapsed = !this.collapsed
+    }
+  },
+}
 </script>
 
 <style lang="less" scoped>
